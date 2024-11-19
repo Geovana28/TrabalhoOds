@@ -1,0 +1,74 @@
+package ods;
+
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.*;
+import ods.*;
+
+public class QuizReciclagem {
+
+    public void mostrarJanelaQuiz(ActionListener actionListener) {
+        JFrame janelaQuiz = new JFrame("Quiz sobre Reciclagem");
+        janelaQuiz.setSize(500, 400);
+        janelaQuiz.setLayout(null);
+        janelaQuiz.setLocationRelativeTo(null);
+
+        JLabel pergunta = new JLabel("Qual cor representa o lixo reciclável de papel?");
+        pergunta.setBounds(20, 20, 460, 30);
+        janelaQuiz.add(pergunta);
+
+        JButton botaoAzul = new JButton("Azul");
+        botaoAzul.setBounds(100, 80, 100, 30);
+        botaoAzul.setBackground(new Color(102, 205, 170));
+	    botaoAzul.setForeground(Color.WHITE);
+	    botaoAzul.setFont(new Font("Arial", Font.BOLD, 16));
+        botaoAzul.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(janelaQuiz, "Correto! A cor azul representa papel.");
+            }
+        });
+        janelaQuiz.add(botaoAzul);
+
+        JButton botaoVerde = new JButton("Verde");
+        botaoVerde.setBounds(250, 80, 100, 30);
+        botaoVerde.setBackground(new Color(102, 205, 170));
+	    botaoVerde.setForeground(Color.WHITE);
+	    botaoVerde.setFont(new Font("Arial", Font.BOLD, 16));
+        botaoVerde.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(janelaQuiz, "Incorreto. Tente novamente!");
+            }
+        });
+        janelaQuiz.add(botaoVerde);
+
+        JButton botaoAmarelo = new JButton("Amarelo");
+        botaoAmarelo.setBounds(100, 140, 100, 30);
+        botaoAmarelo.setBackground(new Color(102, 205, 170));
+	    botaoAmarelo.setForeground(Color.WHITE);
+	    botaoAmarelo.setFont(new Font("Arial", Font.BOLD, 16));
+        botaoAmarelo.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                JOptionPane.showMessageDialog(janelaQuiz, "Incorreto. Tente novamente!");
+            }
+        });
+        janelaQuiz.add(botaoAmarelo);
+
+        
+        JButton botaoProximo = new JButton("Próximo");
+        botaoProximo.setBounds(350, 300, 100, 30);
+        botaoProximo.setBackground(new Color(102, 205, 170)); 
+        botaoProximo.setForeground(Color.WHITE); 
+        botaoProximo.setFont(new Font("Arial", Font.BOLD, 16));
+        botaoProximo.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                janelaQuiz.dispose();  
+                actionListener.actionPerformed(e);  
+            }
+        });
+        janelaQuiz.add(botaoProximo);
+
+        janelaQuiz.setVisible(true);
+    }
+}

@@ -1,0 +1,192 @@
+package ods;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.*;
+import javax.swing.*;
+import ods.*;
+
+public class InformacoesReciclagem {
+
+	public void mostrarJanelaReciclagem() {
+        JFrame janelaReciclagem = new JFrame("O que é Reciclagem?");
+        janelaReciclagem.setSize(800, 700);
+        janelaReciclagem.setLayout(null);
+        janelaReciclagem.setLocationRelativeTo(null);
+
+        JLabel labelTexto = new JLabel("<html>"
+                + "<h3>A Importância da Reciclagem no Nosso Dia a Dia</h3>"
+                + "<p>A reciclagem é uma prática fundamental para a preservação do meio ambiente e para a construção de um futuro mais sustentável. "
+                + "Ao reciclarmos materiais como papel, plástico, vidro e metal, estamos dando um novo destino a esses resíduos, reduzindo a quantidade "
+                + "de lixo enviada para aterros sanitários e contribuindo para a conservação dos recursos naturais.</p>"
+                + "<h4>Por que a reciclagem é tão importante?</h4>"
+                + "<ul>"
+                + "  <li><strong>Preservação do Meio Ambiente:</strong> A reciclagem diminui a necessidade de extração de matérias-primas virgens, "
+                + "reduzindo a pressão sobre ecossistemas e biodiversidade. Além disso, reduz emissões de gases do efeito estufa.</li>"
+                + "  <li><strong>Conservação de Recursos Naturais:</strong> Reutilizar materiais economiza água e energia, recursos cada vez mais escassos.</li>"
+                + "  <li><strong>Redução da Poluição:</strong> Diminui a quantidade de lixo nos oceanos, rios e solos, protegendo a água, o solo e a vida marinha.</li>"
+                + "  <li><strong>Criação de Empregos:</strong> A indústria de reciclagem gera oportunidades de emprego e renda para muitas comunidades.</li>"
+                + "  <li><strong>Economia Financeira:</strong> Pode reduzir os custos com coleta e tratamento de lixo para governos e empresas.</li>"
+                + "</ul>"
+                + "<h4>Como podemos adotar a reciclagem no dia a dia?</h4>"
+                + "<ul>"
+                + "  <li><strong>Separe o Lixo:</strong> Classifique materiais recicláveis, orgânicos e não recicláveis.</li>"
+                + "  <li><strong>Informe-se:</strong> Conheça os tipos de materiais recicláveis e as regras de coleta seletiva da sua cidade.</li>"
+                + "  <li><strong>Reduza o Consumo:</strong> Prefira produtos reutilizáveis e evite embalagens excessivas.</li>"
+                + "  <li><strong>Reutilize:</strong> Utilize garrafas de água, sacolas de tecido e outros utensílios duráveis.</li>"
+                + "  <li><strong>Incentive:</strong> Divulgue a importância da reciclagem para amigos, familiares e colegas.</li>"
+                + "</ul>"
+                + "</html>");
+        
+        labelTexto.setBounds(20, 20, 600,500);
+        janelaReciclagem.add(labelTexto);
+        
+
+        JButton botaoNext = new JButton("Próximo");
+        botaoNext.setBounds(600, 600, 150, 40); 
+        botaoNext.setBackground(new Color(102, 205, 170)); 
+        botaoNext.setForeground(Color.WHITE); 
+        botaoNext.setFont(new Font("Arial", Font.BOLD, 16));
+        botaoNext.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                janelaReciclagem.dispose();
+                mostrarJanelaImportancia();
+            }
+        });
+        janelaReciclagem.add(botaoNext);
+
+        janelaReciclagem.setVisible(true);
+    }
+
+	private void mostrarJanelaImportancia() {
+	    JFrame janelaImportancia = new JFrame("Importância da Reciclagem e Problemas dos Aterros");
+	    janelaImportancia.setSize(900, 700);
+	    janelaImportancia.setLayout(null);
+	    janelaImportancia.setLocationRelativeTo(null);
+
+	    JLabel labelInfo = new JLabel("<html>"
+	            + "<h3>A Importância da Gestão de Resíduos Sólidos</h3>"
+	            + "<p>A forma como descartamos nossos resíduos sólidos impacta diretamente o meio ambiente e a saúde pública. "
+	            + "Aterros e lixões, embora ambos sirvam para descarte de lixo, possuem diferenças significativas em termos de "
+	            + "gestão e impacto ambiental. Entender essas diferenças é crucial para promover práticas mais sustentáveis.</p>"
+	            + "<h4>Lixões: A Herança de um Passado Poluidor</h4>"
+	            + "<p><strong>Lixões:</strong> Locais onde resíduos são descartados a céu aberto, sem tratamento ou controle. "
+	            + "Essa prática poluidora gera gases do efeito estufa, contamina o solo e a água com chorume, além de atrair "
+	            + "vetores de doenças.</p>"
+	            + "<h4>Aterros Sanitários: Um Avanço na Gestão de Resíduos</h4>"
+	            + "<p><strong>Aterros Sanitários:</strong> Instalações projetadas com técnicas de engenharia para minimizar "
+	            + "os impactos ambientais. Utilizam impermeabilização do solo, sistemas de drenagem de chorume e cobertura diária "
+	            + "para reduzir danos à saúde pública e ao meio ambiente.</p>"
+	            + "<h4>Por que Reciclar?</h4>"
+	            + "<p>Tanto aterros quanto lixões são soluções paliativas. A reciclagem é uma ferramenta poderosa para reduzir "
+	            + "o lixo gerado, preservando recursos naturais e promovendo um futuro sustentável.</p>"
+	            + "</html>");
+
+	    labelInfo.setBounds(20, 20, 840, 400); 
+	    janelaImportancia.add(labelInfo);
+
+	    JLabel labelImagem = new JLabel(new ImageIcon(getClass().getResource("CTRMacaubas1.jpg")));
+	    labelImagem.setBounds(40, 380, 640, 200); 
+	    janelaImportancia.add(labelImagem);
+	    
+	    JLabel labelLegenda = new JLabel("Imagem 1: Aterro Sanitário Macaúbas localizado em Sabará");
+	    labelLegenda.setBounds(40, 590, 640, 30);  
+	    labelLegenda.setFont(new Font("Arial", Font.ITALIC, 14));  
+	    janelaImportancia.add(labelLegenda);
+
+	    JButton botaoNext = new JButton("Próximo");
+	    botaoNext.setBounds(720, 600, 100, 40); 
+	    botaoNext.setBackground(new Color(102, 205, 170)); 
+	    botaoNext.setForeground(Color.WHITE); 
+	    botaoNext.setFont(new Font("Arial", Font.BOLD, 16)); 
+	    botaoNext.addActionListener(new ActionListener() {
+	        public void actionPerformed(ActionEvent e) {
+	            janelaImportancia.dispose();
+	            mostrarJanelaSeparacao();
+	        }
+	    });
+        janelaImportancia.add(botaoNext);
+
+        janelaImportancia.setVisible(true);
+    }
+
+	private void mostrarJanelaSeparacao() {
+	    JFrame janelaSeparacao = new JFrame("Separação do Lixo e Coleta Seletiva");
+	    janelaSeparacao.setSize(600, 700); 
+	    janelaSeparacao.setLayout(null);
+	    janelaSeparacao.setLocationRelativeTo(null);
+
+	    JLabel labelTexto = new JLabel("<html>"
+	            + "<h3>Separação do Lixo e Coleta Seletiva</h3>"
+	            + "<p>A separação correta do lixo é fundamental para a reciclagem e a redução do impacto ambiental. As lixeiras coloridas são usadas para coletar materiais específicos:</p>"
+	            + "<ul>"
+	            + "  <li><strong>Azul:</strong> Papel e papelão.</li>"
+	            + "  <li><strong>Amarelo:</strong> Metais.</li>"
+	            + "  <li><strong>Vermelho:</strong> Plástico.</li>"
+	            + "  <li><strong>Verde:</strong> Vidro.</li>"
+	            + "  <li><strong>Marrom:</strong> Resíduos orgânicos.</li>"
+	            + "  <li><strong>Cinza:</strong> Resíduos não recicláveis.</li>"
+	            + "</ul>"
+	            + "</html>");
+	    labelTexto.setBounds(20, 20, 540, 180); 
+	    janelaSeparacao.add(labelTexto);
+
+	    JLabel labelImagem = new JLabel(new ImageIcon(getClass().getResource("images.png")));
+	    labelImagem.setBounds(20, 210, 540, 200); 
+	    janelaSeparacao.add(labelImagem);
+	    
+	    JLabel labelLegenda = new JLabel("<html>Imagem ilustrativa de lixeiras para coleta seletiva.<br>"
+	            + "Cada cor representa um tipo de material a ser reciclado.</html>");
+	    labelLegenda.setBounds(20, 420, 540, 50); 
+	    labelLegenda.setFont(new Font("Arial", Font.ITALIC, 14));  
+	    janelaSeparacao.add(labelLegenda);
+
+	    JButton botaoNext = new JButton("Próximo");
+	    botaoNext.setBounds(240, 500, 120, 40); 
+	    botaoNext.setBackground(new Color(102, 205, 170));
+	    botaoNext.setForeground(Color.WHITE);
+	    botaoNext.setFont(new Font("Arial", Font.BOLD, 16));
+	    botaoNext.addActionListener(new ActionListener() {
+	        public void actionPerformed(ActionEvent e) {
+	            janelaSeparacao.dispose();
+	            mostrarJanelaQuiz();
+	        }
+	    });
+        janelaSeparacao.add(botaoNext);
+
+        janelaSeparacao.setVisible(true);
+    }
+    private void mostrarJanelaQuiz() {
+        QuizReciclagem quiz = new QuizReciclagem();
+        quiz.mostrarJanelaQuiz(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+               
+                ConsultaMaterial material = new ConsultaMaterial();
+                material.mostrarJanelaConsultaMaterial(); 
+            }
+        });
+    }
+
+    public static void mostrarJanelaMensagemFinal() {
+        JFrame janelaFinal = new JFrame("Obrigado!");
+        janelaFinal.setSize(400, 300);
+        janelaFinal.setLayout(null);
+        janelaFinal.setLocationRelativeTo(null);
+
+        JLabel labelMensagem = new JLabel("<html>Obrigado por aprender mais sobre reciclagem!<br>"
+                + "Cada pequena ação conta para um planeta mais limpo e sustentável.<br>"
+                + "Continue fazendo sua parte!</html>", SwingConstants.CENTER);
+        labelMensagem.setBounds(20, 50, 360, 100);
+        janelaFinal.add(labelMensagem);
+
+        JButton botaoFechar = new JButton("Fechar");
+        botaoFechar.setBounds(150, 200, 100, 30);
+        botaoFechar.setBackground(new Color(102, 205, 170));
+	    botaoFechar.setForeground(Color.WHITE);
+	    botaoFechar.setFont(new Font("Arial", Font.BOLD, 16));
+        botaoFechar.addActionListener(e -> janelaFinal.dispose());
+        janelaFinal.add(botaoFechar);
+
+        janelaFinal.setVisible(true);
+    }
+}
