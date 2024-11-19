@@ -42,18 +42,18 @@ public class InformacoesReciclagem {
         janelaReciclagem.add(labelTexto);
         
 
-        JButton botaoNext = new JButton("Próximo");
-        botaoNext.setBounds(600, 600, 150, 40); 
-        botaoNext.setBackground(new Color(102, 205, 170)); 
-        botaoNext.setForeground(Color.WHITE); 
-        botaoNext.setFont(new Font("Arial", Font.BOLD, 16));
-        botaoNext.addActionListener(new ActionListener() {
+        JButton botaoProximo = new JButton("Próximo");
+        botaoProximo.setBounds(600, 600, 150, 40); 
+        botaoProximo.setBackground(new Color(102, 205, 170)); 
+        botaoProximo.setForeground(Color.WHITE); 
+        botaoProximo.setFont(new Font("Arial", Font.BOLD, 16));
+        botaoProximo.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 janelaReciclagem.dispose();
                 mostrarJanelaImportancia();
             }
         });
-        janelaReciclagem.add(botaoNext);
+        janelaReciclagem.add(botaoProximo);
 
         janelaReciclagem.setVisible(true);
     }
@@ -94,18 +94,18 @@ public class InformacoesReciclagem {
 	    labelLegenda.setFont(new Font("Arial", Font.ITALIC, 14));  
 	    janelaImportancia.add(labelLegenda);
 
-	    JButton botaoNext = new JButton("Próximo");
-	    botaoNext.setBounds(720, 600, 100, 40); 
-	    botaoNext.setBackground(new Color(102, 205, 170)); 
-	    botaoNext.setForeground(Color.WHITE); 
-	    botaoNext.setFont(new Font("Arial", Font.BOLD, 16)); 
-	    botaoNext.addActionListener(new ActionListener() {
+	    JButton botaoProximo = new JButton("Próximo");
+	    botaoProximo.setBounds(720, 600, 100, 40); 
+	    botaoProximo.setBackground(new Color(102, 205, 170)); 
+	    botaoProximo.setForeground(Color.WHITE); 
+	    botaoProximo.setFont(new Font("Arial", Font.BOLD, 16)); 
+	    botaoProximo.addActionListener(new ActionListener() {
 	        public void actionPerformed(ActionEvent e) {
 	            janelaImportancia.dispose();
 	            mostrarJanelaSeparacao();
 	        }
 	    });
-        janelaImportancia.add(botaoNext);
+        janelaImportancia.add(botaoProximo);
 
         janelaImportancia.setVisible(true);
     }
@@ -141,21 +141,40 @@ public class InformacoesReciclagem {
 	    labelLegenda.setFont(new Font("Arial", Font.ITALIC, 14));  
 	    janelaSeparacao.add(labelLegenda);
 
-	    JButton botaoNext = new JButton("Próximo");
-	    botaoNext.setBounds(240, 500, 120, 40); 
-	    botaoNext.setBackground(new Color(102, 205, 170));
-	    botaoNext.setForeground(Color.WHITE);
-	    botaoNext.setFont(new Font("Arial", Font.BOLD, 16));
-	    botaoNext.addActionListener(new ActionListener() {
+	    JButton botaoProximo = new JButton("Próximo");
+	    botaoProximo.setBounds(240, 500, 120, 40); 
+	    botaoProximo.setBackground(new Color(102, 205, 170));
+	    botaoProximo.setForeground(Color.WHITE);
+	    botaoProximo.setFont(new Font("Arial", Font.BOLD, 16));
+	    botaoProximo.addActionListener(new ActionListener() {
 	        public void actionPerformed(ActionEvent e) {
 	            janelaSeparacao.dispose();
 	            mostrarJanelaQuiz();
 	        }
 	    });
-        janelaSeparacao.add(botaoNext);
+        janelaSeparacao.add(botaoProximo);
 
         janelaSeparacao.setVisible(true);
     }
+
+	private void mostrarJanelaEmpresas (){
+	JFrame janelaEmpresas = new JFrame("Empresas com programas de reciclagem");
+	janelaEmpresas.setSize(600, 700); 
+	janelaEmpresas.setLayout(null);
+	janelaEmpresas.setLocationRelativeTo(null);
+
+	JLabel labelTexto = new JLabel("<html>"
+	            + "<h3>Empresas com programas de descarte correto</h3>"
+	            + "<p> Há várias empresas que particiopam ativamente do descarte correto de embalagens entre outros.</p>"
+	            + "<ul>"
+	            + "  A O Boticário e a Natura são empresas que recebem embalegens de plástico independente da marca, levando 5 embalagens você ganha um desconto em compras.
+				Várias Drogarias tammbém aceitam medicamentos vencidos, para que possam realizar o descarte correto. 
+	            + "</html>");
+	    labelTexto.setBounds(20, 20, 540, 180); 
+	    janelaSeparacao.add(labelTexto);
+
+	}
+
     private void mostrarJanelaQuiz() {
         QuizReciclagem quiz = new QuizReciclagem();
         quiz.mostrarJanelaQuiz(new ActionListener() {

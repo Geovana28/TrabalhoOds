@@ -134,7 +134,9 @@ public class ConsultaMaterial {
             			+ " Essa camada, geralmente composta por metais como alumínio ou prata, é responsável por refletir a luz e criar a imagem. "
             			+ "A adesão dessa camada ao vidro é muito forte e sua remoção é um processo complexo e custoso.";
             		
-            		
+        case "Roupas":
+        return ""
+
             		
             		
             default:
