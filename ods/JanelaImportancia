@@ -35,13 +35,13 @@ public class JanelaImportancia {
 	    labelInfo.setBounds(20, 20, 840, 400); 
 	    janelaImportancia.add(labelInfo);
 
-	    String imagePath = "C:/User/eclipse-workspace/ods/src/ods/CRTMacaubas1.jpg"; 
+            String imagePath = "src/ods/CTRMacaubas1.jpg";
 	    JLabel labelImagem = new JLabel(new ImageIcon(imagePath));
-	    labelImagem.setBounds(20, 210, 540, 200); 
+	    labelImagem.setBounds(20, 400, 540, 200);
 	    janelaImportancia.add(labelImagem);
 	    
 	    JLabel labelLegenda = new JLabel("Imagem 1: Aterro Sanitário Macaúbas localizado em Sabará");
-	    labelLegenda.setBounds(40, 590, 640, 30);  
+	    labelLegenda.setBounds(40, 610, 640, 30);  
 	    labelLegenda.setFont(new Font("Arial", Font.ITALIC, 14));  
 	    janelaImportancia.add(labelLegenda);
 
