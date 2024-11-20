@@ -9,7 +9,7 @@ import ods.*;
 
 public class MenuPrincipal {
 
-	public void mostrarJanelaPrincipal() {
+	public static void mostrarJanelaPrincipal() {
 	    JFrame janelaPrincipal = new JFrame("Reciclagem - Menu Principal");
 	    janelaPrincipal.setSize(500, 400);
 	    janelaPrincipal.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -28,8 +28,8 @@ public class MenuPrincipal {
         botaoReciclagem.setFont(new Font("Arial", Font.BOLD, 16));
 	    botaoReciclagem.addActionListener(new ActionListener() {
 	        public void actionPerformed(ActionEvent e) {
-	            InformacoesReciclagem recicl = new InformacoesReciclagem();
-	            recicl.mostrarJanelaReciclagem();
+	            InformacoesReciclagem recicla = new InformacoesReciclagem();
+	            recicla.mostrarJanelaReciclagem();
 	            janelaPrincipal.dispose(); 
 	        }
 	    });

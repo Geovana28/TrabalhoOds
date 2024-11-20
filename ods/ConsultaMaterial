@@ -8,7 +8,7 @@ import ods.*;
 
 public class ConsultaMaterial {
 
-    public void mostrarJanelaConsultaMaterial() {
+    public static void mostrarJanelaConsultaMaterial() {
         JFrame janelaConsulta = new JFrame("Consulta de Materiais");
         janelaConsulta.setSize(400, 300);
         janelaConsulta.setLayout(null);
@@ -37,15 +37,15 @@ public class ConsultaMaterial {
         botaoFinalizar.setForeground(Color.WHITE); 
         botaoFinalizar.setFont(new Font("Arial", Font.BOLD, 16));
         botaoFinalizar.addActionListener(e -> {
-            janelaConsulta.dispose();  
-            mostrarJanelaMensagemFinal();  
+            janelaConsulta.dispose();
+            JanelaMensagemFinal.mostrarJanelaMensagemFinal(); 
         });
         janelaConsulta.add(botaoFinalizar);
 
         janelaConsulta.setVisible(true);
     }
 
-    private String obterInformacoes(String material) {
+    public static String obterInformacoes(String material) {
         material = material.trim().toLowerCase();
 
         switch (material) {
@@ -134,9 +134,7 @@ public class ConsultaMaterial {
             			+ " Essa camada, geralmente composta por metais como alumínio ou prata, é responsável por refletir a luz e criar a imagem. "
             			+ "A adesão dessa camada ao vidro é muito forte e sua remoção é um processo complexo e custoso.";
             		
-        case "Roupas":
-        return ""
-
+            		
             		
             		
             default:
@@ -144,7 +142,7 @@ public class ConsultaMaterial {
         }
     }
     
-    private void mostrarJanelaMensagemFinal() {
+    public static void mostrarJanelaMensagemFinal() {
 
         InformacoesReciclagem.mostrarJanelaMensagemFinal();
     }

@@ -1,0 +1,56 @@
+package ods;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.*;
+import javax.swing.*;
+import ods.*;
+
+public class JanelaEmpresas {
+	
+	 public static void mostrarJanelaEmpresas() {
+	        JFrame janelaEmpresas = new JFrame("Empresas que Fazem Coleta Seletiva");
+	        janelaEmpresas.setSize(600, 500);
+	        janelaEmpresas.setLayout(null);
+	        janelaEmpresas.setLocationRelativeTo(null);
+
+	        JLabel labelTexto = new JLabel("<html>"
+	                + "<h3>Empresas que fazem coleta seletiva</h3>"
+	                + "<p>Existem várias empresas que realizam a coleta seletiva e que contribuem para um futuro mais sustentável.</p>"
+	                + "<ul>"
+	                + "  <li>Empresa 1: Coleta de materiais recicláveis em grande escala.</li>"
+	                + "  <li>Empresa 2: Reciclagem de plásticos e papéis.</li>"
+	                + "</ul>"
+	                + "</html>");
+	        labelTexto.setBounds(20, 20, 540, 180); 
+	        janelaEmpresas.add(labelTexto);
+
+	        JButton botaoNext = new JButton("Próximo");
+	        botaoNext.setBounds(240, 400, 120, 40); 
+	        botaoNext.setBackground(new Color(102, 205, 170));
+	        botaoNext.setForeground(Color.WHITE);
+	        botaoNext.setFont(new Font("Arial", Font.BOLD, 16));
+	        botaoNext.addActionListener(new ActionListener() {
+	            public void actionPerformed(ActionEvent e) {
+	                janelaEmpresas.dispose();
+	                mostrarJanelaQuiz(); 
+	            }
+	        });
+	        janelaEmpresas.add(botaoNext);
+
+	        janelaEmpresas.setVisible(true);
+	    }
+	
+ public static void mostrarJanelaQuiz() {
+     QuizReciclagem quiz = new QuizReciclagem();
+     quiz.mostrarJanelaQuiz(new ActionListener() {
+         public void actionPerformed(ActionEvent e) {
+            
+             ConsultaMaterial material = new ConsultaMaterial();
+             material.mostrarJanelaConsultaMaterial(); 
+         }
+     });
+ }
+
+
+}

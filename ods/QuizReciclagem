@@ -9,7 +9,7 @@ import ods.*;
 
 public class QuizReciclagem {
 
-    public void mostrarJanelaQuiz(ActionListener actionListener) {
+    public static void mostrarJanelaQuiz(ActionListener actionListener) {
         JFrame janelaQuiz = new JFrame("Quiz sobre Reciclagem");
         janelaQuiz.setSize(500, 400);
         janelaQuiz.setLayout(null);
