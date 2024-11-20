@@ -6,28 +6,70 @@ import java.awt.*;
 import javax.swing.*;
 import ods.*;
 
-public class JanelaMensagemFinal {
+public class JanelaSeparacao {
 	
-	 public static void mostrarJanelaMensagemFinal() {
-	        JFrame janelaFinal = new JFrame("Obrigado!");
-	        janelaFinal.setSize(400, 300);
-	        janelaFinal.setLayout(null);
-	        janelaFinal.setLocationRelativeTo(null);
+	public static void mostrarJanelaSeparacao() {
+	    JFrame janelaSeparacao = new JFrame("Separação do Lixo e Coleta Seletiva");
+	    janelaSeparacao.setSize(600, 700); 
+	    janelaSeparacao.setLayout(null);
+	    janelaSeparacao.setLocationRelativeTo(null);
 
-	        JLabel labelMensagem = new JLabel("<html>Obrigado por aprender mais sobre reciclagem!<br>"
-	                + "Cada pequena ação conta para um planeta mais limpo e sustentável.<br>"
-	                + "Continue fazendo sua parte!</html>", SwingConstants.CENTER);
-	        labelMensagem.setBounds(20, 50, 360, 100);
-	        janelaFinal.add(labelMensagem);
+	    JLabel labelTexto = new JLabel("<html>"
+	            + "<h3>Separação do Lixo e Coleta Seletiva</h3>"
+	            + "<p>A separação correta do lixo é fundamental para a reciclagem e a redução do impacto ambiental. As lixeiras coloridas são usadas para coletar materiais específicos:</p>"
+	            + "<ul>"
+	            + "  <li><strong>Azul:</strong> Papel e papelão.</li>"
+	            + "  <li><strong>Amarelo:</strong> Metais.</li>"
+	            + "  <li><strong>Vermelho:</strong> Plástico.</li>"
+	            + "  <li><strong>Verde:</strong> Vidro.</li>"
+	            + "  <li><strong>Marrom:</strong> Resíduos orgânicos.</li>"
+	            + "  <li><strong>Cinza:</strong> Resíduos não recicláveis.</li>"
+	            + "</ul>"
+	            + "</html>");
+	    labelTexto.setBounds(20, 20, 540, 180); 
+	    janelaSeparacao.add(labelTexto);
 
-	        JButton botaoFechar = new JButton("Fechar");
-	        botaoFechar.setBounds(150, 200, 100, 30);
-	        botaoFechar.setBackground(new Color(102, 205, 170));
-		    botaoFechar.setForeground(Color.WHITE);
-		    botaoFechar.setFont(new Font("Arial", Font.BOLD, 16));
-	        botaoFechar.addActionListener(e -> janelaFinal.dispose());
-	        janelaFinal.add(botaoFechar);
+	    String imagePath = "src/ods/images.png";
+	    JLabel labelImagem = new JLabel(new ImageIcon(imagePath));
+	    labelImagem.setBounds(20, 210, 540, 200);
+	    janelaSeparacao.add(labelImagem);
+	    
+	    JLabel labelLegenda = new JLabel("<html>Imagem ilustrativa de lixeiras para coleta seletiva.<br>"
+	            + "Cada cor representa um tipo de material a ser reciclado.</html>");
+	    labelLegenda.setBounds(20, 420, 540, 50); 
+	    labelLegenda.setFont(new Font("Arial", Font.ITALIC, 14));  
+	    janelaSeparacao.add(labelLegenda);
 
-	        janelaFinal.setVisible(true);
-	    }
+	    JButton botaoEmpresas = new JButton("Saber mais sobre as empresas");
+        botaoEmpresas.setBounds(100, 500, 200, 40); 
+        botaoEmpresas.setBackground(new Color(102, 205, 170));
+        botaoEmpresas.setForeground(Color.WHITE); 
+        botaoEmpresas.setFont(new Font("Arial", Font.BOLD, 16));
+        botaoEmpresas.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                janelaSeparacao.dispose(); 
+                JanelaEmpresas.mostrarJanelaEmpresas();
+            }
+        });
+        janelaSeparacao.add(botaoEmpresas);
+
+        JButton botaoNext = new JButton("Próximo");
+        botaoNext.setBounds(320, 500, 120, 40); 
+        botaoNext.setBackground(new Color(102, 205, 170));
+        botaoNext.setForeground(Color.WHITE); 
+        botaoNext.setFont(new Font("Arial", Font.BOLD, 16));
+        botaoNext.addActionListener(new ActionListener() {
+        	
+            public void actionPerformed(ActionEvent e) {
+                janelaSeparacao.dispose(); 
+                JanelaEmpresas.mostrarJanelaQuiz(); 
+            }
+        });
+
+        janelaSeparacao.add(botaoNext);
+
+        janelaSeparacao.setVisible(true);        
+    }
+	
+
 }
