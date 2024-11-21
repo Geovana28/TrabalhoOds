@@ -26,23 +26,23 @@ public class JanelaEmpresas {
 	        janelaEmpresas.add(labelTexto);
 
 	        JLabel labelDrogaRaia = new JLabel("<html>"
-	                + "<h4>Droga Raia</h4>"
-	                + "<p><strong>1. Incentivo ao descarte correto:</strong></p>"
-	                + "<ul>"
-	                + "<li><strong>Medicamentos:</strong> Oferece pontos de coleta para descarte seguro de medicamentos vencidos ou sem uso.</li>"
-	                + "<li><strong>Pilhas:</strong> Programa de logística reversa para pilhas e baterias.</li>"
-	                + "</ul>"
-	                + "<p><strong>2. Redução do impacto ambiental:</strong></p>"
-	                + "<ul>"
-	                + "<li><strong>Cupom digital:</strong> Reduz o consumo de papel e incentiva o plantio de árvores.</li>"
-	                + "<li><strong>Sacolas retornáveis:</strong> Promove o uso de sacolas reutilizáveis.</li>"
-	                + "</ul>"
-	                + "<p><strong>3. Compromisso social:</strong></p>"
-	                + "<ul>"
-	                + "<li><strong>Revista Sorria:</strong> Recursos revertidos para projetos sociais, como o GRAACC.</li>"
-	                + "<li><strong>Comunidades ribeirinhas:</strong> Parte das vendas da linha Vegan by Needs apoia comunidades fornecedoras de matérias-primas.</li>"
-	                + "</ul>"
-	                + "</html>");
+    + "<strong><h4>Droga Raia</h4>"
+    + "<p>1. Incentivo ao descarte correto:</p>"
+    + "<ul>"
+    + "<li>Medicamentos: Oferece pontos de coleta para descarte seguro de medicamentos vencidos ou sem uso.</li>"
+    + "<li>Pilhas: Programa de logística reversa para pilhas e baterias.</li>"
+    + "</ul>"
+    + "<p>2. Redução do impacto ambiental:</p>"
+    + "<ul>"
+    + "<li>Cupom digital: Reduz o consumo de papel e incentiva o plantio de árvores.</li>"
+    + "<li>Sacolas retornáveis: Promove o uso de sacolas reutilizáveis.</li>"
+    + "</ul>"
+    + "<p>3. Compromisso social:</p>"
+    + "<ul>"
+    + "<li>Revista Sorria: Recursos revertidos para projetos sociais, como o GRAACC.</li>"
+    + "<li>Comunidades ribeirinhas: Parte das vendas da linha Vegan by Needs apoia comunidades fornecedoras de matérias-primas.</li>"
+    + "</ul></strong>"
+    + "</html>");
 	        labelDrogaRaia.setBounds(20, 100, 820, 230); 
 	        labelDrogaRaia.setFont(new Font("Arial", Font.ITALIC, 12)); 
 	        janelaEmpresas.add(labelDrogaRaia);
