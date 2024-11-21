@@ -40,25 +40,25 @@ public class JanelaSeparacao {
 	    labelLegenda.setFont(new Font("Arial", Font.ITALIC, 14));  
 	    janelaSeparacao.add(labelLegenda);
 
-	    JButton botaoEmpresas = new JButton("Saber mais sobre as empresas");
-        botaoEmpresas.setBounds(100, 500, 200, 40); 
-        botaoEmpresas.setBackground(new Color(102, 205, 170));
-        botaoEmpresas.setForeground(Color.WHITE); 
-        botaoEmpresas.setFont(new Font("Arial", Font.BOLD, 16));
-        botaoEmpresas.addActionListener(new ActionListener() {
+	    JButton botaoProximo = new JButton("Próximo");
+        botaoProximo.setBounds(100, 500, 150, 40); 
+        botaoProximo.setBackground(new Color(102, 205, 170));
+        botaoProximo.setForeground(Color.WHITE); 
+        botaoProximo.setFont(new Font("Arial", Font.BOLD, 16));
+        botaoProximo.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 janelaSeparacao.dispose(); 
                 JanelaEmpresas.mostrarJanelaEmpresas();
             }
         });
-        janelaSeparacao.add(botaoEmpresas);
+        janelaSeparacao.add(botaoProximo);
 
-        JButton botaoNext = new JButton("Próximo");
-        botaoNext.setBounds(320, 500, 120, 40); 
-        botaoNext.setBackground(new Color(102, 205, 170));
-        botaoNext.setForeground(Color.WHITE); 
-        botaoNext.setFont(new Font("Arial", Font.BOLD, 16));
-        botaoNext.addActionListener(new ActionListener() {
+        JButton botaoQuiz = new JButton("Ir para Quiz");
+        botaoQuiz.setBounds(320, 500, 180, 40); 
+        botaoQuiz.setBackground(new Color(102, 205, 170));
+        botaoQuiz.setForeground(Color.WHITE); 
+        botaoQuiz.setFont(new Font("Arial", Font.BOLD, 16));
+        botaoQuiz.addActionListener(new ActionListener() {
         	
             public void actionPerformed(ActionEvent e) {
                 janelaSeparacao.dispose(); 
@@ -66,7 +66,7 @@ public class JanelaSeparacao {
             }
         });
 
-        janelaSeparacao.add(botaoNext);
+        janelaSeparacao.add(botaoQuiz);
 
         janelaSeparacao.setVisible(true);        
     }
