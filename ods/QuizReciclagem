@@ -9,7 +9,31 @@ import javax.swing.*;
 public class QuizReciclagem {
 
     public static void mostrarJanelaQuiz() {
-        mostrarPergunta1(); 
+        mostrarJanelaIntroducao();
+    }
+    
+    private static void mostrarJanelaIntroducao() {
+        JFrame janela = new JFrame("Bem-vindo ao Quiz de Reciclagem");
+        janela.setSize(400, 300);
+        janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        janela.setLayout(null);
+
+        JLabel mensagem = new JLabel("<html><center>Agora vamos fazer um pequeno quiz para ver se você está atento sobre reciclagem.<br>Responda as perguntas a seguir!</center></html>", SwingConstants.CENTER);
+        mensagem.setBounds(20, 20, 360, 100);
+        janela.add(mensagem);
+
+        JButton iniciarButton = new JButton("Iniciar Quiz");
+        configurarBotao(iniciarButton);
+        iniciarButton.setBounds(50, 150, 300, 40);
+        
+        iniciarButton.addActionListener(e -> {
+            janela.dispose(); 
+            mostrarPergunta1(); 
+        });
+
+        janela.add(iniciarButton);
+        janela.setLocationRelativeTo(null);
+        janela.setVisible(true);
     }
 
     private static void mostrarPergunta1() {
