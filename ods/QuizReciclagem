@@ -5,70 +5,139 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
-import ods.*;
 
 public class QuizReciclagem {
 
-    public static void mostrarJanelaQuiz(ActionListener actionListener) {
-        JFrame janelaQuiz = new JFrame("Quiz sobre Reciclagem");
-        janelaQuiz.setSize(500, 400);
-        janelaQuiz.setLayout(null);
-        janelaQuiz.setLocationRelativeTo(null);
+    public static void mostrarJanelaQuiz() {
+        mostrarPergunta1(); 
+    }
 
-        JLabel pergunta = new JLabel("Qual cor representa o lixo reciclável de papel?");
-        pergunta.setBounds(20, 20, 460, 30);
-        janelaQuiz.add(pergunta);
+    private static void mostrarPergunta1() {
+        JFrame janela = new JFrame("Pergunta 1");
+        janela.setSize(400, 300);
+        janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        janela.setLayout(null);
 
-        JButton botaoAzul = new JButton("Azul");
-        botaoAzul.setBounds(100, 80, 100, 30);
-        botaoAzul.setBackground(new Color(102, 205, 170));
-	    botaoAzul.setForeground(Color.WHITE);
-	    botaoAzul.setFont(new Font("Arial", Font.BOLD, 16));
-        botaoAzul.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(janelaQuiz, "Correto! A cor azul representa papel.");
-            }
+        JLabel pergunta = new JLabel("Qual cor representa o lixo reciclável de papel?", SwingConstants.CENTER);
+        pergunta.setBounds(20, 20, 360, 50);
+        janela.add(pergunta);
+
+        JButton opcao1 = new JButton("Azul");
+        JButton opcao2 = new JButton("Verde");
+        JButton opcao3 = new JButton("Amarelo");
+
+        configurarBotao(opcao1);
+        configurarBotao(opcao2);
+        configurarBotao(opcao3);
+
+        opcao1.setBounds(50, 80, 300, 40);
+        opcao2.setBounds(50, 130, 300, 40);
+        opcao3.setBounds(50, 180, 300, 40);
+
+        opcao1.addActionListener(e -> {
+            JOptionPane.showMessageDialog(janela, "Correto!");
+            janela.dispose();
+            mostrarPergunta2();
         });
-        janelaQuiz.add(botaoAzul);
 
-        JButton botaoVerde = new JButton("Verde");
-        botaoVerde.setBounds(250, 80, 100, 30);
-        botaoVerde.setBackground(new Color(102, 205, 170));
-	    botaoVerde.setForeground(Color.WHITE);
-	    botaoVerde.setFont(new Font("Arial", Font.BOLD, 16));
-        botaoVerde.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(janelaQuiz, "Incorreto. Tente novamente!");
-            }
+        opcao2.addActionListener(e -> JOptionPane.showMessageDialog(janela, "Incorreto. Tente novamente!"));
+        opcao3.addActionListener(e -> JOptionPane.showMessageDialog(janela, "Incorreto. Tente novamente!"));
+
+        janela.add(opcao1);
+        janela.add(opcao2);
+        janela.add(opcao3);
+
+        janela.setLocationRelativeTo(null);
+        janela.setVisible(true);
+    }
+
+    private static void mostrarPergunta2() {
+        JFrame janela = new JFrame("Pergunta 2");
+        janela.setSize(400, 300);
+        janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        janela.setLayout(null);
+
+        JLabel pergunta = new JLabel("Qual desses materiais deve ser descartado no lixo orgânico?", SwingConstants.CENTER);
+        pergunta.setBounds(20, 20, 360, 50);
+        janela.add(pergunta);
+
+        JButton opcao1 = new JButton("Vidro");
+        JButton opcao2 = new JButton("Plástico");
+        JButton opcao3 = new JButton("Restos de comida");
+
+        configurarBotao(opcao1);
+        configurarBotao(opcao2);
+        configurarBotao(opcao3);
+
+        opcao1.setBounds(50, 80, 300, 40);
+        opcao2.setBounds(50, 130, 300, 40);
+        opcao3.setBounds(50, 180, 300, 40);
+
+        opcao1.addActionListener(e -> JOptionPane.showMessageDialog(janela, "Incorreto. Tente novamente!"));
+        opcao2.addActionListener(e -> JOptionPane.showMessageDialog(janela, "Incorreto. Tente novamente!"));
+        opcao3.addActionListener(e -> {
+            JOptionPane.showMessageDialog(janela, "Correto!");
+            janela.dispose();
+            mostrarPergunta3(); 
         });
-        janelaQuiz.add(botaoVerde);
 
-        JButton botaoAmarelo = new JButton("Amarelo");
-        botaoAmarelo.setBounds(100, 140, 100, 30);
-        botaoAmarelo.setBackground(new Color(102, 205, 170));
-	    botaoAmarelo.setForeground(Color.WHITE);
-	    botaoAmarelo.setFont(new Font("Arial", Font.BOLD, 16));
-        botaoAmarelo.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(janelaQuiz, "Incorreto. Tente novamente!");
-            }
+        janela.add(opcao1);
+        janela.add(opcao2);
+        janela.add(opcao3);
+
+        janela.setLocationRelativeTo(null);
+        janela.setVisible(true);
+    }
+
+    private static void mostrarPergunta3() {
+        JFrame janela = new JFrame("Pergunta 3");
+        janela.setSize(400, 300);
+        janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        janela.setLayout(null);
+
+        JLabel pergunta = new JLabel("As latinhas de alumínio podem ser recicladas?", SwingConstants.CENTER);
+        pergunta.setBounds(20, 20, 360, 50);
+        janela.add(pergunta);
+
+        JButton opcao1 = new JButton("Sim");
+        JButton opcao2 = new JButton("Não");
+        JButton opcao3 = new JButton("Somente se estiverem limpas");
+
+        configurarBotao(opcao1);
+        configurarBotao(opcao2);
+        configurarBotao(opcao3);
+
+        opcao1.setBounds(50, 80, 300, 40);
+        opcao2.setBounds(50, 130, 300, 40);
+        opcao3.setBounds(50, 180, 300, 40);
+
+        opcao1.addActionListener(e -> {
+            JOptionPane.showMessageDialog(janela, "Correto!");
+            janela.dispose();
+            finalizarQuiz(); 
         });
-        janelaQuiz.add(botaoAmarelo);
 
-        
-        JButton botaoProximo = new JButton("Próximo");
-        botaoProximo.setBounds(350, 300, 100, 30);
-        botaoProximo.setBackground(new Color(102, 205, 170)); 
-        botaoProximo.setForeground(Color.WHITE); 
-        botaoProximo.setFont(new Font("Arial", Font.BOLD, 16));
-        botaoProximo.addActionListener(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                janelaQuiz.dispose();  
-                actionListener.actionPerformed(e);  
-            }
-        });
-        janelaQuiz.add(botaoProximo);
+        opcao2.addActionListener(e -> JOptionPane.showMessageDialog(janela, "Incorreto. Tente novamente!"));
+        opcao3.addActionListener(e -> JOptionPane.showMessageDialog(janela, "Incorreto. Tente novamente!"));
 
-        janelaQuiz.setVisible(true);
+        janela.add(opcao1);
+        janela.add(opcao2);
+        janela.add(opcao3);
+
+        janela.setLocationRelativeTo(null);
+        janela.setVisible(true);
+    }
+
+    private static void configurarBotao(JButton botao) {
+        botao.setBackground(new Color(102, 205, 170));
+        botao.setForeground(Color.WHITE);
+        botao.setFont(new Font("Arial", Font.BOLD, 16));
+    }
+
+
+    private static void finalizarQuiz() {
+        JOptionPane.showMessageDialog(null, "Quiz finalizado! Obrigado por participar.");
+        ConsultaMaterial consultaMaterial = new ConsultaMaterial();
+        consultaMaterial.mostrarJanelaConsultaMaterial();
     }
 }
