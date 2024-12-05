@@ -128,14 +128,12 @@ public class JanelaEmpresas {
 
 	        janelaEmpresas.setVisible(true);
 	    }
-    public static void mostrarJanelaQuiz() {
-        QuizReciclagem quiz = new QuizReciclagem();
-        quiz.mostrarJanelaQuiz(new ActionListener() {
-            public void actionPerformed(ActionEvent e) {
-                ConsultaMaterial material = new ConsultaMaterial();
-                material.mostrarJanelaConsultaMaterial();
-            }
-        });
-    }
+	   public static void mostrarJanelaQuiz() {
+		    QuizReciclagem.mostrarJanelaQuiz();
+		}
+	   
+		public void actionPerformed(ActionEvent e) {
+		    ConsultaMaterial material = new ConsultaMaterial();
+		    material.mostrarJanelaConsultaMaterial();
+		}
 }
-
