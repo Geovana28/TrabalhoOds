@@ -105,7 +105,7 @@ public class JanelaEmpresas {
 	           
 	            public void mouseClicked(MouseEvent e) {
 	                try {
-	                    Desktop.getDesktop().browse(new URI("https://www.natura.com.br/logistica-reversa/"));
+	                    Desktop.getDesktop().browse(new URI("https://www.natura.com.br/c/logistica-reversa"));
 	                } catch (Exception ex) {
 	                    ex.printStackTrace();
 	                }
