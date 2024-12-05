@@ -19,11 +19,11 @@ public class JanelaImportancia {
 	            + "<p>A forma como descartamos nossos resíduos sólidos impacta diretamente o meio ambiente e a saúde pública. "
 	            + "Aterros e lixões, embora ambos sirvam para descarte de lixo, possuem diferenças significativas em termos de "
 	            + "gestão e impacto ambiental. Entender essas diferenças é crucial para promover práticas mais sustentáveis.</p>"
-	            + "<h4>Lixões: A Herança de um Passado Poluidor</h4>"
+	            +"<br>"
 	            + "<p><strong>Lixões:</strong> Locais onde resíduos são descartados a céu aberto, sem tratamento ou controle. "
 	            + "Essa prática poluidora gera gases do efeito estufa, contamina o solo e a água com chorume, além de atrair "
 	            + "vetores de doenças.</p>"
-	            + "<h4>Aterros Sanitários: Um Avanço na Gestão de Resíduos</h4>"
+	            +"<br>"
 	            + "<p><strong>Aterros Sanitários:</strong> Instalações projetadas com técnicas de engenharia para minimizar "
 	            + "os impactos ambientais. Utilizam impermeabilização do solo, sistemas de drenagem de chorume e cobertura diária "
 	            + "para reduzir danos à saúde pública e ao meio ambiente.</p>"
@@ -32,12 +32,12 @@ public class JanelaImportancia {
 	            + "o lixo gerado, preservando recursos naturais e promovendo um futuro sustentável.</p>"
 	            + "</html>");
 
-	    labelInfo.setBounds(20, 20, 840, 400); 
+	    labelInfo.setBounds(20, -70, 840, 400); 
 	    janelaImportancia.add(labelInfo);
 
             String imagePath = "src/ods/CTRMacaubas1.jpg";
 	    JLabel labelImagem = new JLabel(new ImageIcon(imagePath));
-	    labelImagem.setBounds(20, 400, 540, 200);
+	    labelImagem.setBounds(20, 260, 600, 350);
 	    janelaImportancia.add(labelImagem);
 	    
 	    JLabel labelLegenda = new JLabel("Imagem 1: Aterro Sanitário Macaúbas localizado em Sabará");
